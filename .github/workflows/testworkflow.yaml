@@ -18,6 +18,24 @@ jobs:
               echo "Put this in that file" >> newfile.yaml
               cat newfile.yaml
               pwd
+  secondjob:
+            needs: [firstjob]
+            name: Second Job
+            runs-on: macos-latest
+            steps: 
+            - name: Step1
+              run: date
+
+  thirdjob:
+           name: Third Job
+           runs-on: windows-latest
+           steps:
+           - name: Step1
+             run: date
+  
+
+            
+  
               
              
            

@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  
+jobs:
+  firstjob:
+           name: First Job
+           runs on: ubuntu_latest
+           steps:
+           - name: Step1
+             uses: actions/checkout@v3
+           - name: Step2
+             run: |
+              touch newfile.yaml
+              echo "Put this in that file" >> newfile.yaml
+              cat newfile.yaml
+              pwd
+              
+             
+           
